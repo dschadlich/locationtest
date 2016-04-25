@@ -22,7 +22,7 @@ function error(err) {
 
 options = {
   enableHighAccuracy: true,
-  timeout: 5000,
+  timeout: 30000,
   maximumAge: 0
 };
 
