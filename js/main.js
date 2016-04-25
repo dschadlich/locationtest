@@ -1,6 +1,6 @@
 $( document ).ready(function (){
 // upDateLocation ();
-setInterval(upDateLocation,5000);
+setInterval(upDateLocation,1000);
 
 
 
