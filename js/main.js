@@ -1,6 +1,6 @@
 $( document ).ready(function (){
 // upDateLocation ();
-
+alert ('document ready');
 var id, target, options;
 
 function success(pos) {
