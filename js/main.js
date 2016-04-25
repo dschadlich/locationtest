@@ -23,7 +23,7 @@ function error(err) {
 options = {
   enableHighAccuracy: true,
   timeout: 30000,
-  maximumAge: 0
+  maximumAge: Infinity
 };
 
 id = navigator.geolocation.watchPosition(success, error, options);
