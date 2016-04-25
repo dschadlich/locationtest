@@ -26,7 +26,15 @@ options = {
   maximumAge: Infinity
 };
 
-id = navigator.geolocation.watchPosition(success, error, options);
+
+
+if( navigator.geolocation) {
+   id = navigator.geolocation.watchPosition(success, error, options);
+   var timeout = setTimeout( function() { navigator.geolocation.clearWatch( id ); }, 15000 );
+} else {
+   alert ("Got error, no geolocation");
+}
+// id = navigator.geolocation.watchPosition(success, error, options);
 
 
 });
