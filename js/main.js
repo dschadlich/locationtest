@@ -1,20 +1,30 @@
 $( document ).ready(function (){
 // upDateLocation ();
-setInterval(upDateLocation,1000);
 
+var id, target, options;
+
+function success(pos) {
+  console.log (pos);
+  var crd = pos.coords;
+  $("#location").html (crd.latitude+ "<br />" + crd.longitude+ "<br />" + crd.accuracy);
+
+
+
+}
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+}
+
+
+
+options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+id = navigator.geolocation.watchPosition(success, error, options);
 
 
 });
-
-
-
-function upDateLocation (){
-  navigator.geolocation.getCurrentPosition(function(location) {
-    console.log ("updating location");
-    $("#location").html (location.coords.latitude + "<br />" + location.coords.longitude + "<br />" + location.coords.accuracy);
-
-    // console.log(location.coords.latitude);
-    // console.log(location.coords.longitude);
-    // console.log(location.coords.accuracy);
-  });
-}
