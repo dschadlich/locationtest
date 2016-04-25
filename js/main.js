@@ -6,6 +6,7 @@ var id, target, options;
 function success(pos) {
   console.log (pos);
   var crd = pos.coords;
+  alert ('success');
   $("#location").html (crd.latitude+ "<br />" + crd.longitude+ "<br />" + crd.accuracy);
 
 
